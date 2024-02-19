@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: certification-center
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+spring.cloud.nacos.config.file-extension: yml
+
+springdoc:
+  api-docs:
+    enabled: true
+
+---
+#开发环境
+spring.config.activate.on-profile: dev
+spring.cloud.nacos.server-addr: '43.139.239.240:8848'
+spring.cloud.nacos.config.namespace: sa-Token-egg
+spring.cloud.nacos.config.group: sa-Token-egg
+spring.cloud.nacos.discovery.namespace: sa-Token-egg
+
+---
+#生成环境
+spring.config.activate.on-profile: production
+spring.cloud.nacos.server-addr: '...'
+spring.cloud.nacos.config.namespace: sa-Token-egg
+spring.cloud.nacos.config.group: sa-Token-egg
+spring.cloud.nacos.discovery.namespace: sa-Token-egg

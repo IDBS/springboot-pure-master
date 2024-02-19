@@ -14,7 +14,101 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.3.RELEASE</version>
+		<version>2.6.3</version>
 	</parent>
+	<properties>
+		<!--======================= 微服务依赖 =======================-->
+		<!-- SpringBoot 基础 -->
+		<spring-boot.version>2.6.3</spring-boot.version>
+		<!-- SpringCloud 微服务框架 -->
+		<spring-cloud.version>2021.0.1</spring-cloud.version>
+		<!-- SpringCloud Alibaba 依赖 -->
+		<spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
+		<!-- SpringDoc -->
+		<springdoc.version>1.6.9</springdoc.version>
+		<!--swagger-->
+		<springfox.version>3.0.0</springfox.version>
+		<!-- mysql-->
+		<mysql.version>8.0.25</mysql.version>
+		<!-- Sa-Token 整合 Redis (使用 jackson 序列化方式) -->
+		<sa-token-redis-jackson.version>1.37.0</sa-token-redis-jackson.version>
+		<!-- Http请求工具（在模式三的单点注销功能下用到，如不需要可以注释掉） -->
+		<forest-spring-boot-starter.version>1.5.26</forest-spring-boot-starter.version>
+		<!-- Sa-Token 插件：整合SSO -->
+		<sa-token-sso.version>1.37.0</sa-token-sso.version>
+		<!-- Sa-Token 权限认证，在线文档：https://sa-token.cc -->
+		<sa-token-spring-boot-starter.version>1.37.0</sa-token-spring-boot-starter.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-ui</artifactId>
+				<version>${springdoc.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>${springfox.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+
+			<!-- Sa-Token 整合 Redis (使用 jackson 序列化方式) -->
+			<dependency>
+				<groupId>cn.dev33</groupId>
+				<artifactId>sa-token-redis-jackson</artifactId>
+				<version>${sa-token-redis-jackson.version}</version>
+			</dependency>
+
+			<!-- Http请求工具（在模式三的单点注销功能下用到，如不需要可以注释掉） -->
+			<dependency>
+				<groupId>com.dtflys.forest</groupId>
+				<artifactId>forest-spring-boot-starter</artifactId>
+				<version>${forest-spring-boot-starter.version}</version>
+			</dependency>
+			<!-- Sa-Token 插件：整合SSO -->
+			<dependency>
+				<groupId>cn.dev33</groupId>
+				<artifactId>sa-token-sso</artifactId>
+				<version>${sa-token-sso.version}</version>
+			</dependency>
+			<!-- Sa-Token 权限认证，在线文档：https://sa-token.cc -->
+			<dependency>
+				<groupId>cn.dev33</groupId>
+				<artifactId>sa-token-spring-boot-starter</artifactId>
+				<version>${sa-token-spring-boot-starter.version}</version>
+			</dependency>
+			<!-- SpringBoot 基础依赖 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${spring-cloud-alibaba.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 
 </project>
