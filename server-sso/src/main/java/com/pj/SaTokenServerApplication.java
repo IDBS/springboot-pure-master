@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class SaTokenServerApplication {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         SpringApplication.run(SaTokenServerApplication.class, args);
         System.out.println("启动成功，Sa-Token 配置如下：" + SaManager.getConfig());
     }

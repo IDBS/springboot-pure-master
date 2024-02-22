@@ -32,12 +32,16 @@
 		<mysql.version>8.0.25</mysql.version>
 		<!-- Sa-Token 整合 Redis (使用 jackson 序列化方式) -->
 		<sa-token-redis-jackson.version>1.37.0</sa-token-redis-jackson.version>
+		<!-- Sa-Token插件：权限缓存与业务缓存分离 -->
+		<sa-token-alone-redis.version>1.37.0</sa-token-alone-redis.version>
 		<!-- Http请求工具（在模式三的单点注销功能下用到，如不需要可以注释掉） -->
 		<forest-spring-boot-starter.version>1.5.26</forest-spring-boot-starter.version>
 		<!-- Sa-Token 插件：整合SSO -->
 		<sa-token-sso.version>1.37.0</sa-token-sso.version>
 		<!-- Sa-Token 权限认证，在线文档：https://sa-token.cc -->
 		<sa-token-spring-boot-starter.version>1.37.0</sa-token-spring-boot-starter.version>
+		<!--hutool-->
+		<hutool.version>5.7.3</hutool.version>
 	</properties>
 
 	<dependencyManagement>
@@ -106,6 +110,20 @@
 				<version>${spring-cloud-alibaba.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+
+			<!-- Sa-Token插件：权限缓存与业务缓存分离 -->
+			<dependency>
+				<groupId>cn.dev33</groupId>
+				<artifactId>sa-token-alone-redis</artifactId>
+				<version>${sa-token-alone-redis.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.hutool</groupId>
+				<artifactId>hutool-all</artifactId>
+				<version>${hutool.version}</version>
+<!--				<scope>compile</scope>-->
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
